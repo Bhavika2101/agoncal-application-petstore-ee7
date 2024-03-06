@@ -11,57 +11,26 @@ RoostTestHash=49a6fdda39
 
 // ********RoostGPT********
 
-package org.agoncal.application.RoostTest;
-import io.restassured.RestAssured;
-import io.restassured.http.ContentType;
-import io.restassured.response.Response;
-import org.junit.Before;
-import org.junit.jupiter.api.Test;
-import static io.restassured.RestAssured.given;
-import static org.junit.Assert.*;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.ArrayList;
-import java.util.List;
-import org.hamcrest.MatcherAssert;
-import static org.hamcrest.Matchers.*;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+@Test  
+public void countriesIdGet_Test() {
+    this.setUp();
 
-public class countriesIdGetTest {
+    for (Map<String, String> map : envList) {
+        RestAssured.baseURI = map.get("BASE_URL");  
 
-    List<Map<String, String>> envList = new ArrayList<>();
+        // Adding some logging to help identify potential issues
+        System.out.println("Testing with BASE_URL: " + map.get("BASE_URL"));
+        System.out.println("Testing with id: " + map.get("id"));
 
+        Response response = given()
+            .pathParam("id", map.get("id") != null ? map.get("id") : "")
+            .when()
+            .get("/countries/{id}")  
+            .then() 
+            .extract().response();    
 
-    @Before
-    public void setUp() {
-      TestdataLoader dataloader = new TestdataLoader();
-      envList = dataloader.loadData("src/test/java/org/agoncal/application/RoostTest/countries_idGetTest.csv");
-    }
-
-  
-    @Test  
-    public void countriesIdGet_Test() {
-        this.setUp();
-        for (Map<String, String> map : envList) {
-          RestAssured.baseURI = map.get("BASE_URL");  
-  
-                Response response = given()
-				.pathParam("id", map.get("id") != null ? map.get("id") : "")
-                .when()
-                .get("/countries/{id}")  
-                .then() 
-                .extract().response();    
-
-                // The keyword 'default' is not valid in this context. We need to compare with a specific status code like 200 for successful HTTP response.
-                // Commenting out the incorrect line of code.
-                // if (response.statusCode() == default) {
-				//	System.out.println("Description: successful operation");
-				// }
-  
-            }  
-    }
+        // More logging
+        System.out.println("Response code: " + response.statusCode());
+        System.out.println("Response body: " + response.body().asString());
+    }  
 }
