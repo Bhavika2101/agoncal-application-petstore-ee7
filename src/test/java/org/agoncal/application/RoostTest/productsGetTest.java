@@ -10,11 +10,12 @@ RoostTestHash=dad9f0399b
 */
 
 // ********RoostGPT********
+
 package org.agoncal.application.RoostTest;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
-import org.junit.Before;
+import org.junit.jupiter.api.BeforeEach; // changed from org.junit.Before
 import org.junit.jupiter.api.Test;
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.*;
@@ -35,7 +36,7 @@ public class productsGetTest {
     List<Map<String, String>> envList = new ArrayList<>();
 
 
-    @Before
+    @BeforeEach // changed from @Before
     public void setUp() {
       TestdataLoader dataloader = new TestdataLoader();
       envList = dataloader.loadData("src/test/java/org/agoncal/application/RoostTest/productsGetTest.csv");
