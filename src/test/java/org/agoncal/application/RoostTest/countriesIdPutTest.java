@@ -10,7 +10,9 @@ RoostTestHash=e8e87402cc
 */
 
 // ********RoostGPT********
+
 package org.agoncal.application.RoostTest;
+
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
@@ -19,6 +21,7 @@ import org.junit.jupiter.api.Test;
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.*;
 import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
@@ -34,11 +37,11 @@ public class countriesIdPutTest {
 
     List<Map<String, String>> envList = new ArrayList<>();
 
-
     @Before
     public void setUp() {
       TestdataLoader dataloader = new TestdataLoader();
-      String[] envVarsList = {"id"}
+      // Error [41,36] ';' expected. Fixed by adding semicolon at the end of this line.
+      String[] envVarsList = {"id"};
       envList = dataloader.loadData("src/test/java/org/agoncal/application/RoostTest/countries_idPutTest.csv", envVarsList);
     }
 
@@ -55,9 +58,15 @@ public class countriesIdPutTest {
                 .then() 
                 .extract().response();    
          
+                // Error [58,46] illegal start of expression and Error [58,53] : or -> expected. 
+                // Here, 'default' is a reserved word in Java and cannot be used as an identifier. 
+                // Also, the condition for 'if' statement is not clear. 
+                // Commenting out the code until the business logic is clarified.
+                /*
                 if (response.statusCode() == default) {
 					System.out.println("Description: successful operation");
 				}
+                */
   
             }  
     }

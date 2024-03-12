@@ -10,6 +10,7 @@ RoostTestHash=cf8071d343
 */
 
 // ********RoostGPT********
+
 package org.agoncal.application.RoostTest;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
@@ -38,7 +39,7 @@ public class itemsIdGetTest {
     @Before
     public void setUp() {
       TestdataLoader dataloader = new TestdataLoader();
-      String[] envVarsList = {"id"}
+      String[] envVarsList = {"id"}; // Added missing semicolon here
       envList = dataloader.loadData("src/test/java/org/agoncal/application/RoostTest/items_idGetTest.csv", envVarsList);
     }
 
@@ -56,7 +57,7 @@ public class itemsIdGetTest {
                 .then() 
                 .extract().response();    
          
-                if (response.statusCode() == default) {
+                if (response.statusCode() == 200) { // Changed 'default' to 200 (assuming successful operation returns HTTP 200)
 					System.out.println("Description: successful operation");
 				}
   
