@@ -10,6 +10,7 @@ RoostTestHash=30639421be
 */
 
 // ********RoostGPT********
+
 package org.agoncal.application.RoostTest;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
@@ -55,9 +56,11 @@ public class productsIdPutTest {
                 .then() 
                 .extract().response();    
          
-                if (response.statusCode() == default) {
-					System.out.println("Description: successful operation");
-				}
+                // Commenting out the below line as it is causing compilation error. 'default' is a keyword in java and it should not be used as an expression. 
+                // Also, the requirement or business logic for the statusCode check is not clear.
+                // if (response.statusCode() == default) {
+				//	System.out.println("Description: successful operation");
+				// }
   
             }  
     }

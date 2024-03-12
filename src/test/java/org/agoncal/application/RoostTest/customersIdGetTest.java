@@ -10,30 +10,10 @@ RoostTestHash=adad3d1e7b
 */
 
 // ********RoostGPT********
-package org.agoncal.application.RoostTest;
-import io.restassured.RestAssured;
-import io.restassured.http.ContentType;
-import io.restassured.response.Response;
-import org.junit.Before;
-import org.junit.jupiter.api.Test;
-import static io.restassured.RestAssured.given;
-import static org.junit.Assert.*;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.ArrayList;
-import java.util.List;
-import org.hamcrest.MatcherAssert;
-import static org.hamcrest.Matchers.*;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public class customersIdGetTest {
 
     List<Map<String, String>> envList = new ArrayList<>();
-
 
     @Before
     public void setUp() {
@@ -42,7 +22,6 @@ public class customersIdGetTest {
       envList = dataloader.loadData("src/test/java/org/agoncal/application/RoostTest/customers_idGetTest.csv", envVarsList);
     }
 
-  
     @Test  
     public void customersIdGet_Test() {
         this.setUp();
@@ -54,12 +33,16 @@ public class customersIdGetTest {
                 .when()
                 .get("/customers/{id}")  
                 .then() 
-                .extract().response();    
-         
+                .extract().response();  
+                
+                // Commented out the following 'if' statement because it was causing a compilation error.
+                // The 'default' keyword is a reserved keyword in Java and is not allowed to be used as an identifier.
+                // In order to fix this issue, the 'default' keyword should be replaced with a valid condition.
+                /*
                 if (response.statusCode() == default) {
 					System.out.println("Description: successful operation");
 				}
-  
+                */
             }  
     }
 }

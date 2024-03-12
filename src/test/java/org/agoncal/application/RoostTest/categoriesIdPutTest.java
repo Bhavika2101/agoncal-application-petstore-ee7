@@ -10,6 +10,7 @@ RoostTestHash=951091bedf
 */
 
 // ********RoostGPT********
+
 package org.agoncal.application.RoostTest;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
@@ -55,9 +56,14 @@ public class categoriesIdPutTest {
                 .then() 
                 .extract().response();    
          
+                // Compilation error: 'default' is a keyword in java and cannot be used as an identifier.
+                // Also, the if condition is not complete. There is no expression after '=='
+                // Commenting out the problematic code
+                /*
                 if (response.statusCode() == default) {
 					System.out.println("Description: successful operation");
 				}
+                */
   
             }  
     }
