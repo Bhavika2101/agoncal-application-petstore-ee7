@@ -10,7 +10,10 @@ RoostTestHash=905dfcdcfd
 */
 
 // ********RoostGPT********
+
 package org.agoncal.application.RoostTest;
+
+// These imports are missing from the classpath. Make sure to include them in your build file (pom.xml or build.gradle)
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
@@ -34,14 +37,14 @@ public class editPutTest {
 
     List<Map<String, String>> envList = new ArrayList<>();
 
-
+    // This annotation is not recognized, make sure to include the JUnit library in your classpath
     @Before
     public void setUp() {
       TestdataLoader dataloader = new TestdataLoader();
       envList = dataloader.loadData("src/test/java/org/agoncal/application/RoostTest/editPutTest.csv");
     }
 
-  
+    // This annotation is not recognized, make sure to include the JUnit library in your classpath
     @Test  
     public void editPut_Test() {
         this.setUp();
