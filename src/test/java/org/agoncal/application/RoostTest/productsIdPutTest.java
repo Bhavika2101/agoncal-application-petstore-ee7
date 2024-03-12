@@ -10,6 +10,7 @@ RoostTestHash=30639421be
 */
 
 // ********RoostGPT********
+
 package org.agoncal.application.RoostTest;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
@@ -53,11 +54,16 @@ public class productsIdPutTest {
                 .when()
                 .put("/products/{id}")  
                 .then() 
-                .extract().response();    
-         
+                .extract().response();  
+                
+                // There is a compilation error in the below line. The "default" keyword is a reserved keyword in Java and can't be used as a variable. 
+                // We need to replace "default" with an appropriate status code to check against the response status code.
+                // Commenting out the code until it's fixed. 
+                /*
                 if (response.statusCode() == default) {
 					System.out.println("Description: successful operation");
 				}
+                */
   
             }  
     }

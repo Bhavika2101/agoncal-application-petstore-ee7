@@ -10,11 +10,12 @@ RoostTestHash=8b82be555a
 */
 
 // ********RoostGPT********
+
 package org.agoncal.application.RoostTest;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
-import org.junit.Before;
+import org.junit.jupiter.api.BeforeEach; // changed from org.junit.Before
 import org.junit.jupiter.api.Test;
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.*;
@@ -34,15 +35,14 @@ public class categoriesGetTest {
 
     List<Map<String, String>> envList = new ArrayList<>();
 
-
-    @Before
+    // Changed annotation from @Before to @BeforeEach to be compatible with Junit 5
+    @BeforeEach
     public void setUp() {
       TestdataLoader dataloader = new TestdataLoader();
       String[] envVarsList = {""};
       envList = dataloader.loadData("src/test/java/org/agoncal/application/RoostTest/categoriesGetTest.csv", envVarsList);
     }
 
-  
     @Test  
     public void categoriesGet_Test() {
         this.setUp();
@@ -50,41 +50,36 @@ public class categoriesGetTest {
           RestAssured.baseURI = "http://localhost:8080/applicationPetstore/rest";  
   
                 Response response = given()
-				.pathParam("start", testData.get("start") != null ? testData.get("start") : "")
-				.pathParam("max", testData.get("max") != null ? testData.get("max") : "")
+                .pathParam("start", testData.get("start") != null ? testData.get("start") : "")
+                .pathParam("max", testData.get("max") != null ? testData.get("max") : "")
                 .when()
                 .get("/categories")  
                 .then() 
                 .extract().response();    
          
                 if (response.statusCode() == 200) {
-					System.out.println("Description: successful operation");
-      
-              if (response.jsonPath().get("id") != null) {  
-                MatcherAssert.assertThat(response.jsonPath().get("id"), instanceOf(Integer.class));  
-          }
-      
-              if (response.jsonPath().get("version") != null) {  
-                MatcherAssert.assertThat(response.jsonPath().get("version"), instanceOf(Integer.class));  
-          }
-      
-              if (response.jsonPath().get("name") != null) {  
-                MatcherAssert.assertThat(response.jsonPath().get("name"), instanceOf(String.class));  
-                MatcherAssert.assertThat(response.jsonPath().getString("name").length(), lessThanOrEqualTo(30));
-  
-                MatcherAssert.assertThat(response.jsonPath().getString("name").length(), greaterThanOrEqualTo(1));
-  
-          }
-      
-              if (response.jsonPath().get("description") != null) {  
-                MatcherAssert.assertThat(response.jsonPath().get("description"), instanceOf(String.class));  
-                MatcherAssert.assertThat(response.jsonPath().getString("description").length(), lessThanOrEqualTo(3000));
-  
-                MatcherAssert.assertThat(response.jsonPath().getString("description").length(), greaterThanOrEqualTo(0));
-  
-          }
-				}
-  
+                  System.out.println("Description: successful operation");
+
+                  if (response.jsonPath().get("id") != null) {  
+                    MatcherAssert.assertThat(response.jsonPath().get("id"), instanceOf(Integer.class));  
+                  }
+
+                  if (response.jsonPath().get("version") != null) {  
+                    MatcherAssert.assertThat(response.jsonPath().get("version"), instanceOf(Integer.class));  
+                  }
+
+                  if (response.jsonPath().get("name") != null) {  
+                    MatcherAssert.assertThat(response.jsonPath().get("name"), instanceOf(String.class));  
+                    MatcherAssert.assertThat(response.jsonPath().getString("name").length(), lessThanOrEqualTo(30));
+                    MatcherAssert.assertThat(response.jsonPath().getString("name").length(), greaterThanOrEqualTo(1));
+                  }
+
+                  if (response.jsonPath().get("description") != null) {  
+                    MatcherAssert.assertThat(response.jsonPath().get("description"), instanceOf(String.class));  
+                    MatcherAssert.assertThat(response.jsonPath().getString("description").length(), lessThanOrEqualTo(3000));
+                    MatcherAssert.assertThat(response.jsonPath().getString("description").length(), greaterThanOrEqualTo(0));
+                  }
+                }
             }  
     }
 }

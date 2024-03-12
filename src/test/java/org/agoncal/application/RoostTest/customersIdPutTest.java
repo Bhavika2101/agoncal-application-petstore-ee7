@@ -10,6 +10,7 @@ RoostTestHash=0142669878
 */
 
 // ********RoostGPT********
+
 package org.agoncal.application.RoostTest;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
@@ -54,11 +55,15 @@ public class customersIdPutTest {
                 .put("/customers/{id}")  
                 .then() 
                 .extract().response();    
-         
+          
+                // Compilation error at line 58, 'default' is a keyword in Java and cannot be used as an identifier.
+                // The comparison operation is not defined. It is not clear what should be compared with the response status code.
+                // Commenting the following lines of code until the issue is resolved.
+                /*
                 if (response.statusCode() == default) {
 					System.out.println("Description: successful operation");
 				}
-  
+                */
             }  
     }
 }

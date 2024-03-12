@@ -10,6 +10,7 @@ RoostTestHash=db55ad3066
 */
 
 // ********RoostGPT********
+
 package org.agoncal.application.RoostTest;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
@@ -56,9 +57,10 @@ public class categoriesIdGetTest {
                 .then() 
                 .extract().response();    
          
-                if (response.statusCode() == default) {
-					System.out.println("Description: successful operation");
-				}
+                // Commented this line as it contains compilation error. 'default' keyword is used incorrectly here.
+                // if (response.statusCode() == default) {
+				//	System.out.println("Description: successful operation");
+				// }
   
             }  
     }
