@@ -1,0 +1,11 @@
+company^|^pointOfSaleId^|^RequestBody^|^statusCode^|^undefined
+23495^|^1^|^{"firstName":"John","lastName":"Doe"}^|^200^|^
+23496^|^2^|^{"firstName":"Jane","lastName":"Doe"}^|^201^|^
+23497^|^3^|^{"firstName":"Jim","lastName":"Smith"}^|^202^|^
+23498^|^4^|^{"firstName":"Jill","lastName":"Johnson"}^|^203^|^
+23499^|^5^|^{"firstName":"Jack","lastName":"Brown"}^|^204^|^
+23500^|^6^|^{"firstName":"Julia","lastName":"Davis"}^|^205^|^
+23501^|^7^|^{"firstName":"Jerry","lastName":"Miller"}^|^206^|^
+23502^|^8^|^{"firstName":"Jenny","lastName":"Wilson"}^|^207^|^
+23503^|^9^|^{"firstName":"Jeff","lastName":"Moore"}^|^208^|^
+23504^|^10^|^{"firstName":"Joyce","lastName":"Taylor"}^|^209^|^
