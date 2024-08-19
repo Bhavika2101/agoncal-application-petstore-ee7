@@ -1,0 +1,11 @@
+company^|^RestaurantTableGroupId^|^pointOfSaleId^|^RequestBody^|^statusCode^|^undefined
+23495^|^1357^|^3839^|^{"item":"burger","quantity":2,"price":5.50}^|^200^|^
+23596^|^1458^|^3940^|^{"item":"pizza","quantity":1,"price":12.00}^|^200^|^
+23697^|^1559^|^4041^|^{"item":"pasta","quantity":3,"price":7.00}^|^200^|^
+23798^|^1660^|^4142^|^{"item":"soda","quantity":4,"price":1.50}^|^200^|^
+23899^|^1761^|^4243^|^{"item":"coffee","quantity":1,"price":3.00}^|^200^|^
+23900^|^1862^|^4344^|^{"item":"tea","quantity":2,"price":2.00}^|^200^|^
+24001^|^1963^|^4445^|^{"item":"fries","quantity":3,"price":4.00}^|^200^|^
+24102^|^2064^|^4546^|^{"item":"salad","quantity":1,"price":6.00}^|^200^|^
+24203^|^2165^|^4647^|^{"item":"wrap","quantity":2,"price":8.00}^|^200^|^
+24304^|^2266^|^4748^|^{"item":"sandwich","quantity":1,"price":5.00}^|^200^|^
