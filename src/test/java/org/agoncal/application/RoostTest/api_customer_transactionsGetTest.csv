@@ -1,0 +1,11 @@
+company^|^from^|^offset^|^limit^|^RequestBody^|^statusCode^|^undefined
+23495^|^2023-11-27T11:28:37+01:00^|^0^|^25^|^{"name":"John Doe","email":"john.doe@example.com"}^|^200^|^
+28347^|^2023-12-01T09:15:22+01:00^|^10^|^50^|^{"name":"Jane Smith","email":"jane.smith@example.com"}^|^201^|^
+34921^|^2023-12-05T14:45:12+01:00^|^20^|^75^|^{"name":"James Brown","email":"james.brown@example.com"}^|^202^|^
+45763^|^2023-12-10T16:30:55+01:00^|^30^|^100^|^{"name":"Linda Johnson","email":"linda.johnson@example.com"}^|^203^|^
+51234^|^2023-12-15T18:20:37+01:00^|^40^|^125^|^{"name":"Michael Williams","email":"michael.williams@example.com"}^|^204^|^
+67892^|^2023-12-20T13:10:48+01:00^|^50^|^150^|^{"name":"Elizabeth Taylor","email":"elizabeth.taylor@example.com"}^|^205^|^
+75324^|^2023-12-25T11:50:29+01:00^|^60^|^175^|^{"name":"David Miller","email":"david.miller@example.com"}^|^206^|^
+89213^|^2024-01-01T10:40:32+01:00^|^70^|^200^|^{"name":"Jennifer Wilson","email":"jennifer.wilson@example.com"}^|^207^|^
+93472^|^2024-01-05T15:30:40+01:00^|^80^|^225^|^{"name":"Robert Moore","email":"robert.moore@example.com"}^|^208^|^
+102348^|^2024-01-10T12:20:50+01:00^|^90^|^250^|^{"name":"Patricia Anderson","email":"patricia.anderson@example.com"}^|^209^|^
