@@ -1,0 +1,11 @@
+company^|^pointOfSaleId^|^RequestBody^|^statusCode^|^undefined
+23495^|^1^|^{"firstName":"John","lastName":"Doe","email":"john.doe@example.com"}^|^200^|^
+24325^|^2^|^{"firstName":"Jane","lastName":"Doe","email":"jane.doe@example.com"}^|^200^|^
+23463^|^3^|^{"firstName":"Bob","lastName":"Smith","email":"bob.smith@example.com"}^|^200^|^
+23575^|^4^|^{"firstName":"Alice","lastName":"Johnson","email":"alice.johnson@example.com"}^|^200^|^
+23535^|^5^|^{"firstName":"Charlie","lastName":"Brown","email":"charlie.brown@example.com"}^|^200^|^
+23485^|^6^|^{"firstName":"David","lastName":"Williams","email":"david.williams@example.com"}^|^200^|^
+23615^|^7^|^{"firstName":"Eva","lastName":"Martinez","email":"eva.martinez@example.com"}^|^200^|^
+23595^|^8^|^{"firstName":"Frank","lastName":"Miller","email":"frank.miller@example.com"}^|^200^|^
+23455^|^9^|^{"firstName":"Grace","lastName":"Davis","email":"grace.davis@example.com"}^|^200^|^
+23515^|^10^|^{"firstName":"Harry","lastName":"Garcia","email":"harry.garcia@example.com"}^|^200^|^
